@@ -6,10 +6,16 @@ jobs:
       script:
         - ulimit -Sn
         - ulimit -Hn
+        - sudo sysctl -w fs.file-max=65535
+        - ulimit -Sn
+        - ulimit -Hn
     - stage: Trusty
       os: linux
       dist: trusty
       script:
+        - ulimit -Sn
+        - ulimit -Hn
+        - sudo sysctl -w fs.file-max=65535
         - ulimit -Sn
         - ulimit -Hn
     - stage: Xenial
@@ -18,16 +24,25 @@ jobs:
       script:
         - ulimit -Sn
         - ulimit -Hn
+        - sudo sysctl -w fs.file-max=65535
+        - ulimit -Sn
+        - ulimit -Hn
     - stage: Bionic
       os: linux
       dist: bionic
       script:
         - ulimit -Sn
         - ulimit -Hn
+        - sudo sysctl -w fs.file-max=65535
+        - ulimit -Sn
+        - ulimit -Hn
     - stage: Focal
       os: linux
       dist: focal
       script:
+        - ulimit -Sn
+        - ulimit -Hn
+        - sudo sysctl -w fs.file-max=65535
         - ulimit -Sn
         - ulimit -Hn
 

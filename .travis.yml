@@ -6,8 +6,8 @@ jobs:
       script:
         - ulimit -Sn
         - ulimit -Hn
-        - ulimit -Hs 80000
-        - ulimit -Ss 80000
+        - ulimit -Hs 65535
+        - ulimit -Ss 65535
         - ulimit -Sn
         - ulimit -Hn
     - stage: Trusty

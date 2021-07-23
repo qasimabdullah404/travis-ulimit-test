@@ -6,7 +6,7 @@ jobs:
       script:
         - cat /etc/security/limits.conf
         - sudo sed -i "/travis\thard\tnofile\t64000/d" /etc/security/limits.conf
-        - echo "travis\thard\tnofile\t65535" | sudo tee -a /etc/security/limits.conf
+        - echo -e "travis\thard\tnofile\t65535" | sudo tee -a /etc/security/limits.conf
         - cat /etc/security/limits.conf
         - ulimit -Hn
         - sudo ulimit -Hs 65535

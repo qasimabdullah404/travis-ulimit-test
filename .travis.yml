@@ -7,6 +7,7 @@ jobs:
         - cat /etc/security/limits.conf
         - sudo sed -i "/travis hard nofile 64000/d" /etc/security/limits.conf
         - echo "travis hard nofile 65535" | sudo tee -a /etc/security/limits.conf
+        - cat /etc/security/limits.conf
         - ulimit -Hn
         - sudo ulimit -Hs 65535
         #- ulimit -Sn

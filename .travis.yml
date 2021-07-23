@@ -5,7 +5,7 @@ jobs:
       dist: precise
       script:
         - cat /etc/security/limits.conf
-        - sudo sed -i '' "/travis\thard\tnofile\t\t64000/d" /etc/security/limits.conf
+        - sudo cp /dev/null /etc/security/limits.conf
         - echo -e "travis\thard\tnofile\t\t65535" | sudo tee -a /etc/security/limits.conf
         - cat /etc/security/limits.conf
         - ulimit -Hn

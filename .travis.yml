@@ -1,9 +1,32 @@
-os: linux
-dist: precise
-arch: amd64
-sudo: required
-
-script:
-  - echo 99999999 > /proc/sys/fs/file-max
-  - ulimit -Sa
-  - ulimit -Ha
+jobs:
+  include:
+    - stage: Precise
+      os: linux
+      dist: precise
+      script:
+        - ulimit -Sn
+        - ulimit -Hn
+    - stage: Trusty
+      os: linux
+      dist: trusty
+      script:
+        - ulimit -Sn
+        - ulimit -Hn
+    - stage: Xenial
+      os: linux
+      dist: xenial
+      script:
+        - ulimit -Sn
+        - ulimit -Hn
+    - stage: Bionic
+      os: linux
+      dist: bionic
+      script:
+        - ulimit -Sn
+        - ulimit -Hn
+    - stage: Focal
+      os: linux
+      dist: focal
+      script:
+        - ulimit -Sn
+        - ulimit -Hn

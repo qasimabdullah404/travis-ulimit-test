@@ -30,3 +30,6 @@ jobs:
       script:
         - ulimit -Sn
         - ulimit -Hn
+
+notifications:
+  email: false

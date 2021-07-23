@@ -3,8 +3,7 @@ dist: focal
 arch: amd64
 
 script:
+  - ulimit -n 1048576
   - ulimit -Sa
   - ulimit -Ha
-  - ulimit -c unlimited
-  - ulimit -Sa
-  - ulimit -Ha
+  - echo 99999999 | sudo tee /proc/sys/fs/file-max

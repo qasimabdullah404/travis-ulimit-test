@@ -4,9 +4,12 @@ jobs:
       os: linux
       dist: precise
       script:
-        - ulimit -a
-        - sudo sysctl -w fs.file-max=65535
-        - ulimit -a
+        - ulimit -Sn
+        - ulimit -Hn
+        - sudo ulimit -Hs 80000
+        - sudo ulimit -Ss 80000
+        - ulimit -Sn
+        - ulimit -Hn
     - stage: Trusty
       os: linux
       dist: trusty

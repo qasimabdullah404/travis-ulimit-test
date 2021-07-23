@@ -2,6 +2,10 @@ os: linux
 dist: focal
 arch: amd64
 
+addons:
+  ulimit:
+    core: unlimited
+
 script:
   - ulimit -Sa
   - ulimit -Ha

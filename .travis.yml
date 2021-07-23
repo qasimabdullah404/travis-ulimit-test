@@ -1,0 +1,7 @@
+os: linux
+dist: focal
+arch: amd64
+
+script:
+  - ulimit -Sa
+  - ulimit -Ha

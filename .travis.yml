@@ -4,47 +4,37 @@ jobs:
       os: linux
       dist: precise
       script:
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
         - sudo sysctl -w fs.file-max=65535
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
     - stage: Trusty
       os: linux
       dist: trusty
       script:
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
         - sudo sysctl -w fs.file-max=65535
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
     - stage: Xenial
       os: linux
       dist: xenial
       script:
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
         - sudo sysctl -w fs.file-max=65535
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
     - stage: Bionic
       os: linux
       dist: bionic
       script:
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
         - sudo sysctl -w fs.file-max=65535
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
     - stage: Focal
       os: linux
       dist: focal
       script:
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
         - sudo sysctl -w fs.file-max=65535
-        - ulimit -Sn
-        - ulimit -Hn
+        - ulimit -a
 
 notifications:
   email: false

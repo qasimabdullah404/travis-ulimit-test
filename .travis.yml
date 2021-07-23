@@ -4,7 +4,7 @@ arch: amd64
 sudo: required
 
 script:
-  #- ulimit -n 1048576
-  #- echo 99999999 | sudo tee /proc/sys/fs/file-max
+  - ulimit -n 1048576
+  - echo 99999999 | sudo tee /proc/sys/fs/file-max
   - ulimit -Sa
   - ulimit -Ha

@@ -4,12 +4,14 @@ jobs:
       os: linux
       dist: precise
       script:
-        - ulimit -Sn
-        - ulimit -Hn
-        - ulimit -Hs 65535
-        - ulimit -Ss 65535
-        - ulimit -Sn
-        - ulimit -Hn
+        - cat /etc/security/limits.conf
+        - sudo ulimit -Hs 65535
+        #- ulimit -Sn
+        #- ulimit -Hn
+        #- ulimit -Hs 65535
+        #- ulimit -Ss 65535
+        #- ulimit -Sn
+        #- ulimit -Hn
     - stage: Trusty
       os: linux
       dist: trusty

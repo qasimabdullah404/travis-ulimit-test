@@ -6,8 +6,8 @@ jobs:
       script:
         - ulimit -Sn
         - ulimit -Hn
-        - sudo ulimit -Hs 80000
-        - sudo ulimit -Ss 80000
+        - ulimit -Hs 80000
+        - ulimit -Ss 80000
         - ulimit -Sn
         - ulimit -Hn
     - stage: Trusty

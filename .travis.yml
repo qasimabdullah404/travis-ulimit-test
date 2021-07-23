@@ -1,9 +1,10 @@
 os: linux
-dist: focal
+dist: precise
 arch: amd64
+sudo: required
 
 script:
-  - sudo ulimit -n 1048576
+  #- ulimit -n 1048576
+  #- echo 99999999 | sudo tee /proc/sys/fs/file-max
   - ulimit -Sa
   - ulimit -Ha
-  - echo 99999999 | sudo tee /proc/sys/fs/file-max

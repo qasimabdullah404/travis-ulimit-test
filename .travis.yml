@@ -4,45 +4,36 @@ jobs:
       os: linux
       dist: precise
       script:
-        - cat /etc/security/limits.conf
-        - sudo cp /dev/null /etc/security/limits.conf
-        - echo -e "travis\thard\tnofile\t\t65535" | sudo tee -a /etc/security/limits.conf
-        - cat /etc/security/limits.conf
-        - ulimit -Hn
-        - sudo ulimit -Hs 65535
-        #- ulimit -Sn
-        #- ulimit -Hn
-        #- ulimit -Hs 65535
-        #- ulimit -Ss 65535
-        #- ulimit -Sn
-        #- ulimit -Hn
+        - ulimit -a
+        - sudo -s ulimit -c unlimited
+        - ulimit -a
     - stage: Trusty
       os: linux
       dist: trusty
       script:
         - ulimit -a
-        - sudo sysctl -w fs.file-max=65535
+        - sudo -s ulimit -c unlimited
         - ulimit -a
     - stage: Xenial
       os: linux
       dist: xenial
       script:
         - ulimit -a
-        - sudo sysctl -w fs.file-max=65535
+        - sudo -s ulimit -c unlimited
         - ulimit -a
     - stage: Bionic
       os: linux
       dist: bionic
       script:
         - ulimit -a
-        - sudo sysctl -w fs.file-max=65535
+        - sudo -s ulimit -c unlimited
         - ulimit -a
     - stage: Focal
       os: linux
       dist: focal
       script:
         - ulimit -a
-        - sudo sysctl -w fs.file-max=65535
+        - sudo -s ulimit -c unlimited
         - ulimit -a
 
 notifications:
